@@ -4,84 +4,180 @@ import { projects } from "../data/projects";
 
 <section
   id="projects"
-  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+  class="py-20 border-t border-[#ffffff10] text-[var(--white)]"
 >
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">
-      Selected work
-    </h2>
 
-    <h3 class="text-4xl md:text-5xl font-medium mb-8">
-      Projects
-    </h3>
+    <!-- HEADER -->
+    <div class="mb-12">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <p class="text-lg text-[var(--sec)] shiny-sec mb-2">
+        Selected Work
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-medium">
+        Projects & Case Studies
+      </h2>
+
+      <p
+        class="mt-4 max-w-3xl text-[var(--white-icon)] leading-relaxed"
+      >
+        A collection of technology, business analysis, and digital
+        transformation projects focused on building structured solutions.
+      </p>
+
+    </div>
+
+
+    <!-- PROJECT GRID -->
+    <div class="grid grid-cols-1 gap-8">
+
       {
         projects.map((project) => (
+
           <article
-            class="group rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-6 transition-all duration-300 hover:border-[var(--sec)]/30 hover:bg-[#181818]"
+            class="rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-8 transition-all duration-300 hover:border-[var(--sec)]/40"
           >
-            <div class="flex items-start justify-between gap-4 mb-6">
+
+
+            <!-- TITLE -->
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+
               <div>
-                <span class="text-sm text-[var(--sec)]">
+
+                <p class="text-sm text-[var(--sec)] mb-3">
                   {project.category}
-                </span>
+                </p>
 
-                <h4 class="text-2xl md:text-3xl font-semibold mt-2">
-                  {project.title}
-                </h4>
-              </div>
 
-              <div
-                class="size-11 shrink-0 rounded-xl border border-[var(--white-icon-tr)] flex items-center justify-center text-[var(--sec)]"
-                aria-hidden="true"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  class="size-5"
+                <h3
+                  class="text-3xl md:text-4xl font-semibold"
                 >
-                  <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 12 22ZM11 7H13V11H17V13H13V17H11V13H7V11H11V7Z" />
-                </svg>
+                  {project.title}
+                </h3>
+
+
+                <p
+                  class="mt-4 text-[var(--white-icon)] leading-relaxed max-w-3xl"
+                >
+                  {project.description}
+                </p>
+
               </div>
-            </div>
 
-            <p
-              class="text-sm md:text-base leading-relaxed text-[var(--white-icon)] mb-6"
-            >
-              {project.description}
-            </p>
 
-            <div class="border-t border-[var(--white-icon-tr)] pt-5">
-              <p
-                class="text-xs uppercase tracking-wider text-[var(--white-icon)] mb-3"
+              <span
+                class="text-sm text-[var(--white-icon)] border border-[var(--white-icon-tr)] rounded-full px-4 py-2 whitespace-nowrap"
               >
-                Scope
-              </p>
-
-              <ul class="space-y-2">
-                {
-                  project.highlights.map((highlight) => (
-                    <li
-                      class="flex items-start gap-3 text-sm text-[var(--white)]"
-                    >
-                      <span class="text-[var(--sec)] mt-0.5">•</span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-
-            <div class="mt-6 pt-5 border-t border-[var(--white-icon-tr)]">
-              <span class="text-sm text-[var(--white-icon)]">
                 {project.status}
               </span>
+
+
             </div>
+
+
+
+            <!-- ROLE -->
+            <div
+              class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
+            >
+
+              <p
+                class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-2"
+              >
+                Role
+              </p>
+
+              <p class="text-[var(--white)]">
+                {project.role}
+              </p>
+
+            </div>
+
+
+
+
+            <!-- STACK -->
+            <div class="mt-6">
+
+              <p
+                class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-3"
+              >
+                Technology Stack
+              </p>
+
+
+              <div class="flex flex-wrap gap-2">
+
+                {
+                  project.stack.map((item) => (
+
+                    <span
+                      class="px-3 py-1 rounded-full text-sm border border-[var(--white-icon-tr)] text-[var(--white-icon)]"
+                    >
+                      {item}
+                    </span>
+
+                  ))
+                }
+
+              </div>
+
+            </div>
+
+
+
+
+            <!-- HIGHLIGHTS -->
+            <div
+              class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
+            >
+
+              <p
+                class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-4"
+              >
+                Scope & Contribution
+              </p>
+
+
+              <ul class="space-y-3">
+
+                {
+                  project.highlights.map((highlight) => (
+
+                    <li
+                      class="flex gap-3 text-[var(--white)]"
+                    >
+
+                      <span
+                        class="text-[var(--sec)]"
+                      >
+                        →
+                      </span>
+
+                      <span>
+                        {highlight}
+                      </span>
+
+                    </li>
+
+                  ))
+                }
+
+              </ul>
+
+
+            </div>
+
+
           </article>
+
         ))
       }
+
+
     </div>
+
+
   </div>
 </section>
