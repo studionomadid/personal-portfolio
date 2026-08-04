@@ -1,0 +1,126 @@
+---
+import { about } from "../data/about";
+---
+
+<section
+  id="about"
+  class="py-20 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="mb-12">
+
+      <p class="text-lg text-[var(--sec)] shiny-sec mb-2">
+        About
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-medium">
+        {about.title}
+      </h2>
+
+      <p
+        class="mt-6 max-w-3xl text-[var(--white-icon)] leading-relaxed text-base md:text-lg"
+      >
+        {about.introduction}
+      </p>
+
+    </div>
+
+
+    <!-- EXPERTISE -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 gap-6"
+    >
+
+      {
+        about.expertise.map((item) => (
+          <article
+            class="rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-6 transition-all duration-300 hover:border-[var(--sec)]/40"
+          >
+
+            <h3
+              class="text-xl md:text-2xl font-semibold mb-3"
+            >
+              {item.title}
+            </h3>
+
+
+            <p
+              class="text-sm md:text-base text-[var(--white-icon)] leading-relaxed"
+            >
+              {item.description}
+            </p>
+
+          </article>
+        ))
+      }
+
+    </div>
+
+
+    <!-- PHILOSOPHY -->
+    <div
+      class="mt-10 rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-6"
+    >
+
+      <p
+        class="text-sm uppercase tracking-wider text-[var(--sec)] mb-3"
+      >
+        Philosophy
+      </p>
+
+
+      <p
+        class="text-lg text-[var(--white)] leading-relaxed"
+      >
+        {about.philosophy}
+      </p>
+
+    </div>
+
+
+    <!-- DIRECTION -->
+    <div
+      class="mt-6 rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-6"
+    >
+
+      <p
+        class="text-sm uppercase tracking-wider text-[var(--sec)] mb-3"
+      >
+        Direction
+      </p>
+
+
+      <p
+        class="text-lg text-[var(--white)] leading-relaxed"
+      >
+        {about.direction}
+      </p>
+
+    </div>
+
+
+    <!-- CURRENT FOCUS -->
+    <div
+      class="mt-6 rounded-2xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-6"
+    >
+
+      <p
+        class="text-sm uppercase tracking-wider text-[var(--sec)] mb-3"
+      >
+        Current Focus
+      </p>
+
+
+      <p
+        class="text-lg text-[var(--white)] leading-relaxed"
+      >
+        {about.currentFocus}
+      </p>
+
+    </div>
+
+
+  </div>
+</section>
