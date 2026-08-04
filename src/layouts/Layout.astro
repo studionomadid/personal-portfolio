@@ -6,9 +6,14 @@ interface Props {
 const { title } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
-const siteUrl = Astro.site ?? new URL("https://studionomadid.github.io");
+
+const siteUrl =
+  Astro.site ??
+  new URL("https://studionomadid.github.io/personal-portfolio/");
+
 const canonicalUrl = new URL(base, siteUrl).href;
 const ogImageUrl = new URL(`${base}og.image.png`, siteUrl).href;
+
 const fontUrl = `${base}fonts/montserrat-latin-wght-normal.woff2`;
 ---
 
@@ -21,14 +26,28 @@ const fontUrl = `${base}fonts/montserrat-latin-wght-normal.woff2`;
 
     <meta
       name="description"
-      content="Lauren Surya — DevOps, Data Analyst, UI/UX Designer, and technology professional focused on building structured digital and business solutions."
+      content="Lauren Surya — DevOps, Data Analyst, UI/UX Designer, and technology professional focused on building structured digital systems, data-driven solutions, and user-centered experiences."
     />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Lauren Surya, DevOps, Data Analyst, UI/UX Designer, Cybersecurity, Web Development, Digital Systems, Technology Portfolio"
+    />
 
     <meta name="author" content="Lauren Surya" />
 
-    <link rel="icon" type="image/png" href={`${base}favicon.png`} />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta name="theme-color" content="#101010" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href={`${base}favicon.png`}
+    />
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
@@ -50,7 +69,7 @@ const fontUrl = `${base}fonts/montserrat-latin-wght-normal.woff2`;
 
     <meta
       property="og:description"
-      content="Portfolio of Lauren Surya — DevOps, Data Analyst, UI/UX Designer, and technology professional."
+      content="Portfolio of Lauren Surya — DevOps, Data Analyst, UI/UX Designer, and technology professional building digital solutions."
     />
 
     <meta
@@ -63,7 +82,10 @@ const fontUrl = `${base}fonts/montserrat-latin-wght-normal.woff2`;
       content={canonicalUrl}
     />
 
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:type"
+      content="website"
+    />
 
     <meta
       property="og:site_name"
@@ -77,9 +99,8 @@ const fontUrl = `${base}fonts/montserrat-latin-wght-normal.woff2`;
         "@type": "Person",
         "name": "Lauren Surya",
         "url": "https://studionomadid.github.io/personal-portfolio/",
-        "jobTitle": "DevOps, Data Analyst & UI/UXDesigner",
-        "description": "Lauren Surya is a technology professional working across DevOps, data analysis, UI/UX design, cybersecurity, and digital systems.",
-        "sameAs": []
+        "jobTitle": "DevOps, Data Analyst & UI/UX Designer",
+        "description": "Lauren Surya is a technology professional working across DevOps, data analysis, UI/UX design, cybersecurity, and digital systems."
       }
     </script>
   </head>
