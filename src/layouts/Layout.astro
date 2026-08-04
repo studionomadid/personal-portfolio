@@ -10,15 +10,24 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{title} | Software Developer</title>
+
+    <title>{title} | Lauren Surya</title>
+
     <meta
       name="description"
-      content="Oscar Andres Hernandez Pineda - Software Developer building interactive and seamless digital experiences with cutting-edge frontend development."
+      content="Lauren Surya — DevOps, Data Analyst, UI/UX Designer, and technology professional focused on building structured digital and business solutions."
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href="https://oscarhernandez.vercel.app/" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="author" content="Lauren Surya" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://YOUR-DOMAIN.com/" />
+
+    <!-- Font -->
     <link
       rel="preload"
       href="/fonts/montserrat-latin-wght-normal.woff2"
@@ -27,43 +36,48 @@ const { title } = Astro.props;
       crossorigin="anonymous"
     />
 
+    <!-- Open Graph -->
     <meta
       property="og:title"
-      content="Oscar Andres Hernandez Pineda | Software Developer"
-    />
-    <meta
-      property="og:description"
-      content="Portfolio of Oscar Andres Hernandez Pineda, Software Developer specializing in frontend and interactive experiences."
-    />
-    <meta
-      property="og:image"
-      content="https://oscarhernandez.vercel.app/og.image.png"
-    />
-    <meta property="og:url" content="https://oscarhernandez.vercel.app" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:site_name"
-      content="Oscar Andres Hernandez Pineda Portfolio"
+      content="Lauren Surya | Portfolio"
     />
 
-    <!-- Structured Data (JSON-LD) -->
+    <meta
+      property="og:description"
+      content="Portfolio of Lauren Surya — DevOps, Data Analyst, UI/UX Designer, and technology professional."
+    />
+
+    <meta
+      property="og:image"
+      content="https://YOUR-DOMAIN.com/og.image.png"
+    />
+
+    <meta
+      property="og:url"
+      content="https://YOUR-DOMAIN.com"
+    />
+
+    <meta property="og:type" content="website" />
+
+    <meta
+      property="og:site_name"
+      content="Lauren Surya Portfolio"
+    />
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
-        "name": "Oscar Andres Hernandez Pineda",
-        "alternateName": "Oscar Hernandez",
-        "url": "https://oscarhernandez.vercel.app",
-        "image": "https://oscarhernandez.vercel.app/og.image.png",
-        "sameAs": [
-          "https://github.com/gothsec",
-          "https://linkedin.com/in/andresshernandez-eng"
-        ],
-        "jobTitle": "Software Developer",
-        "description": "Software Developer building interactive and seamless digital experiences."
+        "name": "Lauren Surya",
+        "url": "https://YOUR-DOMAIN.com",
+        "jobTitle": "DevOps, Data Analyst & UI/UX Designer",
+        "description": "Lauren Surya is a technology professional working across DevOps, data analysis, UI/UX design, cybersecurity, and digital systems.",
+        "sameAs": []
       }
     </script>
   </head>
+
   <body class="bg-[--background] sm:px-28 lg:px-20 px-9">
     <slot />
   </body>
@@ -103,8 +117,6 @@ const { title } = Astro.props;
     color: var(--background);
   }
 
-  /* Scrollbar styles */
-
   ::-webkit-scrollbar {
     width: 15px;
   }
@@ -123,7 +135,6 @@ const { title } = Astro.props;
     background: var(--pink);
   }
 
-  /* Scrollbar styles for Firefox */
   * {
     scrollbar-width: thin;
     scrollbar-color: var(--line) var(--container);
