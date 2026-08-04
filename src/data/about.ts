@@ -16,7 +16,7 @@ export const about: About = {
   title: "Technology, Data, and Digital Innovation",
 
   introduction:
-    "A technology-focused professional passionate about building digital experiences, analyzing complex systems, and creating solutions that combine engineering, data, and human-centered thinking.",
+    "A multidisciplinary technology professional focused on building meaningful digital solutions through engineering, data, and design. Experienced across DevOps, data analysis, cybersecurity, UI/UX design, web development, and system transformation, with a focus on bridging technical implementation, business understanding, and user needs. Passionate about creating structured, scalable, and impactful digital experiences that connect technology with real-world problems.",
 
   expertise: [
     {
