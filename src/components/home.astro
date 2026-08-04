@@ -2,65 +2,111 @@
 import LetterGlitch from "../React/LetterGlitch.tsx";
 import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
+import { profile } from "../data/profile";
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
   <div class="max-w-5xl mx-auto space-y-8 md:py-36 pb-14">
 
-    <!-- INTRO -->
-    <div class="text-left space-y-4">
+    <!-- HERO INTRO -->
+    <div class="text-left space-y-6">
 
       <p class="text-md md:text-lg text-[var(--white-icon)]">
-        Hi, I'm Lauren Surya
+        Hi, I'm {profile.name}
       </p>
 
+
       <div
-        class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
+        class="flex flex-col lg:flex-row lg:items-center gap-6"
       >
+
         <h1
           class="text-[var(--white)] text-5xl md:text-6xl font-medium text-pretty leading-none"
         >
-          Data Analyst &amp; <br />Data Scientist
+          Technology<br />
+          Professional
         </h1>
 
-        <p class="text-md md:text-2xl text-[var(--white-icon)]">
-          Turning
-          <span class="text-[var(--sec)] shiny-sec">data</span>,
-          business processes, and systems into structured insights
-          that support better decisions.
+
+        <p
+          class="text-md md:text-2xl text-[var(--white-icon)] leading-relaxed"
+        >
+          Building digital solutions through
+          <span class="text-[var(--sec)] shiny-sec">
+            systems
+          </span>,
+          data, and human-centered design.
         </p>
+
       </div>
 
-      <!-- SOCIAL LINKS
-           Intentionally removed during identity migration.
-           We will add Lauren's verified links later.
-      -->
+
+      <p
+        class="max-w-3xl text-base md:text-lg text-[var(--white-icon)] leading-relaxed"
+      >
+        {profile.description}
+      </p>
+
+
+      <!-- CTA -->
+      <div class="flex flex-wrap gap-4 pt-4">
+
+        <a
+          href="#projects"
+          class="px-6 py-3 rounded-xl bg-[var(--sec)] text-[#101010] font-medium transition hover:opacity-80"
+        >
+          View Projects
+        </a>
+
+
+        <a
+          href="#contact"
+          class="px-6 py-3 rounded-xl border border-[var(--white-icon-tr)] text-[var(--white)] transition hover:border-[var(--sec)]"
+        >
+          Contact
+        </a>
+
+      </div>
+
     </div>
+
 
     <!-- TECHNOLOGY / TOOLS -->
     <LogoWall />
 
+
     <!-- SKILLS + VISUAL -->
-    <div class="flex flex-col lg:flex-row items-center gap-8">
+    <div
+      class="flex flex-col lg:flex-row items-center gap-8"
+    >
 
       <SkillsList client:load />
+
 
       <div
         class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16"
       >
+
         <LetterGlitch
           client:load
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
+          glitchColors={[
+            "#111111",
+            "#2b2b2b",
+            "#666666"
+          ]}
           glitchSpeed={33}
           centerVignette={false}
           outerVignette={true}
           smooth={true}
         />
+
       </div>
 
     </div>
+
   </div>
 </section>
+
 
 <style is:global>
   .shiny-sec {
@@ -70,21 +116,29 @@ import SkillsList from "../React/SkillsList.tsx";
       #eee5ff 50%,
       #a476ff 75%
     );
+
     background-size: 400% 100%;
+
     -webkit-background-clip: text;
     background-clip: text;
+
     color: transparent;
+
     animation: shine 3s linear infinite;
   }
 
+
   @keyframes shine {
+
     0% {
       background-position: 100% 50%;
     }
+
 
     30%,
     70% {
       background-position: 0% 50%;
     }
+
   }
 </style>
