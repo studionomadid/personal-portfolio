@@ -1,42 +1,5 @@
 ---
-interface Project {
-  title: string;
-  category: string;
-  description: string;
-  highlights: string[];
-  status: string;
-}
-
-const projects: Project[] = [
-  {
-    title: "NOMAD Agency",
-    category: "Freelance / Digital Solutions",
-    description:
-      "Digital and business solution projects covering UI/UX, web development, digital campaigns, system development, and technology-driven solutions.",
-    highlights: [
-      "UI/UX & digital experience",
-      "Web & application development",
-      "Digital marketing & campaign strategy",
-      "Business and technology solutions",
-    ],
-    status: "Freelance Portfolio",
-  },
-  {
-    title: "GN Central System — 1st Deployment",
-    category: "Business & System Analysis",
-    description:
-      "Business analysis and system transformation initiative focused on understanding existing business processes, financial conditions, data flows, operational systems, and preparing structured system improvements.",
-    highlights: [
-      "Business process & system analysis",
-      "Financial & ratio analysis",
-      "Data Flow Diagram (DFD)",
-      "SOP & operational improvement",
-      "System migration planning",
-      "Reporting & decision support",
-    ],
-    status: "System Analysis Project",
-  },
-];
+import { projects } from "../data/projects";
 ---
 
 <section
@@ -79,24 +42,30 @@ const projects: Project[] = [
                   fill="currentColor"
                   class="size-5"
                 >
-                  <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM11 7H13V11H17V13H13V17H11V13H7V11H11V7Z" />
+                  <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 12 22ZM11 7H13V11H17V13H13V17H11V13H7V11H11V7Z" />
                 </svg>
               </div>
             </div>
 
-            <p class="text-sm md:text-base leading-relaxed text-[var(--white-icon)] mb-6">
+            <p
+              class="text-sm md:text-base leading-relaxed text-[var(--white-icon)] mb-6"
+            >
               {project.description}
             </p>
 
             <div class="border-t border-[var(--white-icon-tr)] pt-5">
-              <p class="text-xs uppercase tracking-wider text-[var(--white-icon)] mb-3">
+              <p
+                class="text-xs uppercase tracking-wider text-[var(--white-icon)] mb-3"
+              >
                 Scope
               </p>
 
               <ul class="space-y-2">
                 {
                   project.highlights.map((highlight) => (
-                    <li class="flex items-start gap-3 text-sm text-[var(--white)]">
+                    <li
+                      class="flex items-start gap-3 text-sm text-[var(--white)]"
+                    >
                       <span class="text-[var(--sec)] mt-0.5">•</span>
                       <span>{highlight}</span>
                     </li>
