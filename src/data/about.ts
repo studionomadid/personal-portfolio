@@ -13,10 +13,10 @@ export interface About {
 }
 
 export const about: About = {
-  title: "About Lauren Surya",
+  title: "Technology, Data, and Digital Innovation",
 
   introduction:
-    "Lauren Surya is a multidisciplinary technology professional combining software engineering, data analytics, DevOps practices, cybersecurity awareness, and human-centered design to create structured digital solutions.",
+    "A technology-focused professional passionate about building digital experiences, analyzing complex systems, and creating solutions that combine engineering, data, and human-centered thinking.",
 
   expertise: [
     {
