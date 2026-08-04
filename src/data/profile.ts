@@ -11,7 +11,7 @@ export const profile: Profile = {
   name: "Lauren Surya",
 
   title:
-    "DevOps Engineer, Data Analyst & UI/UX Designer",
+    "Technology Professional | Systems, Data & Digital Experience",
 
   location:
     "Bandung, West Java, Indonesia",
@@ -20,8 +20,8 @@ export const profile: Profile = {
     "your.email@example.com",
 
   summary:
-    "Technology professional combining software engineering, data analysis, cybersecurity, and user experience design to build structured digital solutions.",
+    "Building digital systems through the combination of software engineering, data analysis, cybersecurity principles, and human-centered design.",
 
   description:
-    "Lauren Surya is a multidisciplinary technology professional with experience across DevOps, data analytics, UI/UX design, cybersecurity, web development, and digital system transformation. Focused on building scalable solutions by connecting technology, business processes, and human-centered design.",
+    "Lauren Surya is a multidisciplinary technology professional focused on building meaningful digital solutions through engineering, data, and design. With experience across DevOps, data analysis, cybersecurity, UI/UX design, web development, and system transformation, Lauren bridges technical implementation with business understanding and user needs. Passionate about creating structured, scalable, and impactful digital experiences that connect technology with real-world problems.",
 };
