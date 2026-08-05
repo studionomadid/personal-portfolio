@@ -9,7 +9,9 @@ import { projects } from "../data/projects";
   <div class="mx-auto max-w-7xl">
     <!-- Section Header -->
     <div class="mb-16 max-w-3xl">
-      <p class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--sec)]">
+      <p
+        class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--sec)]"
+      >
         Selected Work
       </p>
 
@@ -19,7 +21,9 @@ import { projects } from "../data/projects";
         Projects
       </h2>
 
-      <p class="mt-6 text-base leading-7 text-[var(--white-icon)] md:text-lg">
+      <p
+        class="mt-6 text-base leading-7 text-[var(--white-icon)] md:text-lg"
+      >
         A collection of technology, business analysis, and digital
         transformation projects focused on solving real-world problems
         through structured thinking, data, design, and technology.
@@ -30,9 +34,7 @@ import { projects } from "../data/projects";
     <div class="space-y-8">
       {
         projects.map((project, index) => (
-          <article
-            class="group relative overflow-hidden rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] transition-all duration-300 hover:border-[var(--sec)]/40"
-          >
+          <article class="group relative overflow-hidden rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] transition-all duration-300 hover:border-[var(--sec)]/40">
             <div class="p-6 md:p-8 lg:p-10">
               <!-- Project Meta -->
               <div class="mb-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.15em] text-[var(--white-icon)]">
@@ -56,9 +58,7 @@ import { projects } from "../data/projects";
               </div>
 
               <!-- Title -->
-              <h3
-                class="max-w-4xl text-2xl font-semibold tracking-tight text-[var(--white)] md:text-3xl lg:text-4xl"
-              >
+              <h3 class="max-w-4xl text-2xl font-semibold tracking-tight text-[var(--white)] md:text-3xl lg:text-4xl">
                 {project.title}
               </h3>
 
@@ -68,9 +68,7 @@ import { projects } from "../data/projects";
               </p>
 
               <!-- Description -->
-              <p
-                class="mt-6 max-w-4xl text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8"
-              >
+              <p class="mt-6 max-w-4xl text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8">
                 {project.description}
               </p>
 
@@ -118,14 +116,95 @@ import { projects } from "../data/projects";
 
                 <div class="flex flex-wrap gap-2">
                   {project.stack.map((technology) => (
-                    <span
-                      class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1.5 text-xs text-[var(--white-icon)]"
-                    >
+                    <span class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1.5 text-xs text-[var(--white-icon)]">
                       {technology}
                     </span>
                   ))}
                 </div>
               </div>
+
+              <!-- Case Study -->
+              {project.caseStudy && (
+                <div class="mt-12 border-t border-[var(--white-icon-tr)] pt-10">
+                  <div class="mb-8">
+                    <p class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--sec)]">
+                      Case Study
+                    </p>
+
+                    <h4 class="text-2xl font-semibold tracking-tight text-[var(--white)] md:text-3xl">
+                      From Problem to Structured Solution
+                    </h4>
+                  </div>
+
+                  <div class="grid gap-x-10 gap-y-8 md:grid-cols-2">
+                    <!-- Overview -->
+                    <div>
+                      <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                        Overview
+                      </h5>
+
+                      <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                        {project.caseStudy.overview}
+                      </p>
+                    </div>
+
+                    <!-- Context -->
+                    <div>
+                      <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                        Context
+                      </h5>
+
+                      <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                        {project.caseStudy.context}
+                      </p>
+                    </div>
+
+                    <!-- Problem -->
+                    <div>
+                      <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                        Problem
+                      </h5>
+
+                      <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                        {project.caseStudy.problem}
+                      </p>
+                    </div>
+
+                    <!-- Approach -->
+                    <div>
+                      <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                        Approach
+                      </h5>
+
+                      <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                        {project.caseStudy.approach}
+                      </p>
+                    </div>
+
+                    <!-- Solution -->
+                    <div>
+                      <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                        Solution
+                      </h5>
+
+                      <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                        {project.caseStudy.solution}
+                      </p>
+                    </div>
+
+                    <!-- Outcome -->
+                    <div>
+                      <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                        Outcome
+                      </h5>
+
+                      <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                        {project.caseStudy.outcome}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <!-- Project Document -->
               {project.document && (
