@@ -20,8 +20,8 @@ export const profile: Profile = {
     "your.email@example.com",
 
   summary:
-    "Building digital systems through the combination of software engineering, data analysis, cybersecurity principles, and human-centered design.",
+    "Building digital systems through software engineering, data analysis, cybersecurity principles, and human-centered design.",
 
   description:
-    "Lauren Surya is a multidisciplinary technology professional focused on building meaningful digital solutions through engineering, data, and design. With experience across DevOps, data analysis, cybersecurity, UI/UX design, web development, and system transformation, Lauren bridges technical implementation with business understanding and user needs. Passionate about creating structured, scalable, and impactful digital experiences that connect technology with real-world problems.",
+    "Lauren Surya is a multidisciplinary technology professional working across software engineering, systems, data, and digital experience. With experience in DevOps, data analysis, cybersecurity, UI/UX design, web development, and system transformation, Lauren connects technical implementation with business requirements and user needs. Focused on creating structured, practical, and scalable digital solutions that address real-world problems.",
 };
