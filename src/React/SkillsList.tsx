@@ -2,7 +2,31 @@ import { useState } from "react";
 import { skillCategories } from "../data/skills";
 
 const CategoryIcons = {
-  "Data Analysis": (
+  "Software Engineering": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 text-[var(--sec)] opacity-70"
+      aria-hidden="true"
+    >
+      <path d="M8.7 17.3 3.4 12l5.3-5.3 1.4 1.4L6.2 12l3.9 3.9-1.4 1.4ZM15.3 17.3l-1.4-1.4 3.9-3.9-3.9-3.9 1.4-1.4 5.3 5.3-5.3 5.3ZM13.1 4.7l1.9.5-4.1 14.1-1.9-.5 4.1-14.1Z" />
+    </svg>
+  ),
+
+  "Systems, DevOps & Infrastructure": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-6 h-6 text-[var(--sec)] opacity-70"
+      aria-hidden="true"
+    >
+      <path d="M4 4h6v6H4V4Zm10 0h6v6h-6V4ZM4 14h6v6H4v-6Zm10 0h6v6h-6v-6ZM6 6v2h2V6H6Zm10 0v2h2V6h-2ZM6 16v2h2v-2H6Zm10 0v2h2v-2h-2ZM10 7h4v2h-4V7Zm0 8h4v2h-4v-2ZM7 10v4h2v-4H7Zm8 0v4h2v-4h-2Z" />
+    </svg>
+  ),
+
+  "Data & Business Intelligence": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -26,7 +50,7 @@ const CategoryIcons = {
     </svg>
   ),
 
-  "UI/UX & Digital Solutions": (
+  "UI/UX & Digital Experience": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -34,7 +58,7 @@ const CategoryIcons = {
       className="w-6 h-6 text-[var(--sec)] opacity-70"
       aria-hidden="true"
     >
-      <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM12 4C16.418 4 20 7.582 20 12C20 13.85 19.372 15.553 18.32 16.904L15.707 14.293L14.293 15.707L16.904 18.32C15.553 19.372 13.85 20 12 20C7.582 20 4 16.418 4 12C4 10.15 4.628 8.447 5.68 7.096L8.293 9.707L9.707 8.293L7.096 5.68C8.447 4.628 10.15 4 12 4ZM12 7C11.448 7 11 7.448 11 8V11H8C7.448 11 7 11.448 7 12C7 12.552 7.448 13 8 13H12C12.552 13 13 12.552 13 12V8C13 7.448 12.552 7 12 7Z" />
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm0 3a1 1 0 0 0-1 1v3H8a1 1 0 1 0 0 2h4a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1Z" />
     </svg>
   ),
 };
