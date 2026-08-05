@@ -38,7 +38,17 @@ import { projects } from "../data/projects";
             <div class="p-6 md:p-8 lg:p-10">
               <!-- Project Meta -->
               <div class="mb-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.15em] text-[var(--white-icon)]">
-                <span>{project.type ?? "project"}</span>
+                <span
+                  class={`rounded-full border px-3 py-1.5 ${
+                    project.type === "freelance"
+                      ? "border-[var(--sec)]/40 text-[var(--sec)]"
+                      : project.type === "case-study"
+                        ? "border-[var(--white)]/30 text-[var(--white)]"
+                        : "border-[var(--white-icon-tr)] text-[var(--white-icon)]"
+                  }`}
+                >
+                  {project.type ?? "project"}
+                </span>
 
                 {project.year && (
                   <>
@@ -213,7 +223,7 @@ import { projects } from "../data/projects";
                     href={project.document.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)]"
+                    class="group/link inline-flex items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)]"
                     aria-label={`${project.document.label}: ${project.title}`}
                   >
                     <span>{project.document.label}</span>
@@ -222,7 +232,7 @@ import { projects } from "../data/projects";
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="h-4 w-4"
+                      class="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
                       aria-hidden="true"
                     >
                       <path d="M14 3H21V10H19V6.414L10.707 14.707L9.293 13.293L17.586 5H14V3ZM5 5H11V7H5C4.448 7 4 7.448 4 8V19C4 19.552 4.448 20 5 20H16C16.552 20 17 19.552 17 19V13H19V19C19 20.657 17.657 22 16 22H5C3.343 22 2 20.657 2 19V8C2 6.343 3.343 5 5 5Z" />
