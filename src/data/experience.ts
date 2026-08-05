@@ -14,7 +14,7 @@ export const experiences: Experience[] = [
     period: "March 2022 – Present",
     location: "Bandung, West Java, Indonesia",
     description:
-      "Working across technology, data, and digital product development by combining system engineering, data analysis, UI/UX implementation, and modern development practices. Responsible for designing structured solutions, improving workflows, and building digital experiences that connect business needs with scalable technology.",
+      "Work across technology, data, and digital product development by combining system engineering, data analysis, UI/UX implementation, and modern development practices. Focus on designing structured solutions, improving workflows, and building digital experiences that connect business requirements with practical technology solutions.",
     current: true,
   },
   {
@@ -23,7 +23,7 @@ export const experiences: Experience[] = [
     period: "September 2024 – May 2025",
     location: "Bandung, West Java, Indonesia",
     description:
-      "Analyzed business performance data to generate insights that support operational and strategic decision-making. Worked with reporting processes, data interpretation, and digital information management to help transform raw business data into meaningful recommendations.",
+      "Analyzed business performance data to generate insights for operational and strategic decision-making. Worked with reporting processes, data interpretation, and information management to transform business data into structured findings and actionable recommendations.",
   },
   {
     company: "Standard Chartered",
@@ -31,7 +31,7 @@ export const experiences: Experience[] = [
     period: "August 2021 – October 2023",
     location: "Singapore, Singapore",
     description:
-      "Supported secure software development practices with a focus on application security, risk awareness, and digital banking environments. Collaborated with technical teams to improve security considerations throughout the software development lifecycle while maintaining reliable and user-focused digital experiences.",
+      "Supported secure software development practices with a focus on application security, risk awareness, and digital banking environments. Collaborated with technical teams to incorporate security considerations throughout the software development lifecycle while supporting reliable and user-focused digital experiences.",
   },
   {
     company: "Illo's Hotel",
@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
     period: "October 2022 – January 2023",
     location: "Bandung, West Java, Indonesia",
     description:
-      "Designed and developed responsive web interfaces by combining UI/UX principles, usability considerations, and modern web design practices. Created layouts, prototypes, and digital assets while supporting website maintenance, accessibility improvements, search optimization, and overall user experience enhancement.",
+      "Designed and developed responsive web interfaces using UI/UX principles, usability considerations, and modern web design practices. Created layouts, prototypes, and digital assets while supporting website maintenance, accessibility improvements, search optimization, and overall user experience.",
   },
   {
     company: "PT Bank Central Asia Tbk (BCA)",
@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
     period: "October 2019 – March 2022",
     location: "Bandung, West Java, Indonesia",
     description:
-      "Worked across front-end development and UI/UX design to transform creative concepts into functional digital products. Designed user interfaces, developed responsive web solutions, and collaborated on building websites that balanced visual quality, performance, and usability.",
+      "Worked across front-end development and UI/UX design to transform creative concepts into functional digital products. Designed user interfaces, developed responsive web solutions, and collaborated on websites that balanced visual quality, performance, usability, and practical business requirements.",
   },
   {
     company: "PT. DJARUM",
@@ -63,7 +63,7 @@ export const experiences: Experience[] = [
     period: "August 2018 – April 2019",
     location: "Jakarta, Indonesia",
     description:
-      "Managed technology-focused projects by coordinating planning, execution, communication, and delivery processes. Combined project management practices with technical understanding to support efficient development workflows and ensure digital initiatives aligned with business objectives.",
+      "Managed technology-focused projects across planning, execution, communication, and delivery. Combined project management practices with technical understanding to coordinate development workflows and support digital initiatives aligned with business objectives.",
   },
   {
     company: "Atlassian",
@@ -71,6 +71,6 @@ export const experiences: Experience[] = [
     period: "April 2013 – October 2016",
     location: "New York, United States",
     description:
-      "Worked with data analysis and large-scale information processing to identify patterns, generate insights, and support data-driven decisions. Experienced in handling complex datasets within a technology environment while applying analytical approaches to improve business understanding and operational effectiveness.",
+      "Worked with data analysis and large-scale information processing to identify patterns, generate insights, and support data-driven decision-making. Applied analytical approaches to complex datasets within a technology environment to improve business understanding and operational effectiveness.",
   },
 ];
