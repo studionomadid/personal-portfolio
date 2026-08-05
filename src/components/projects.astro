@@ -4,244 +4,157 @@ import { projects } from "../data/projects";
 
 <section
   id="projects"
-  class="py-20 border-t border-[#ffffff10] text-[var(--white)]"
+  class="relative w-full overflow-hidden bg-[var(--bg)] px-6 py-24 md:px-12 lg:px-20"
 >
-  <div class="max-w-5xl mx-auto">
-
-    <!-- HEADER -->
-    <div class="mb-12">
-      <p class="text-lg text-[var(--sec)] shiny-sec mb-2">
+  <div class="mx-auto max-w-7xl">
+    <!-- Section Header -->
+    <div class="mb-16 max-w-3xl">
+      <p class="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-[var(--sec)]">
         Selected Work
       </p>
 
-      <h2 class="text-4xl md:text-5xl font-medium">
-        Projects & Case Studies
+      <h2
+        class="text-4xl font-semibold tracking-tight text-[var(--white)] md:text-5xl lg:text-6xl"
+      >
+        Projects
       </h2>
 
-      <p
-        class="mt-4 max-w-3xl text-[var(--white-icon)] leading-relaxed"
-      >
+      <p class="mt-6 text-base leading-7 text-[var(--white-icon)] md:text-lg">
         A collection of technology, business analysis, and digital
-        transformation projects focused on building structured solutions.
+        transformation projects focused on solving real-world problems
+        through structured thinking, data, design, and technology.
       </p>
     </div>
 
-    <!-- PROJECT GRID -->
-    <div class="grid grid-cols-1 gap-8">
+    <!-- Projects -->
+    <div class="space-y-8">
       {
-        projects.map((project) => (
+        projects.map((project, index) => (
           <article
-            class="rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-8 transition-all duration-300 hover:border-[var(--sec)]/40"
+            class="group relative overflow-hidden rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] transition-all duration-300 hover:border-[var(--sec)]/40"
           >
+            <div class="p-6 md:p-8 lg:p-10">
+              <!-- Project Meta -->
+              <div class="mb-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.15em] text-[var(--white-icon)]">
+                <span>{project.type ?? "project"}</span>
 
-            <!-- TITLE -->
-            <div
-              class="flex flex-col md:flex-row md:items-start md:justify-between gap-6"
-            >
-              <div>
-                <div class="flex flex-wrap items-center gap-3 mb-3">
-                  <p class="text-sm text-[var(--sec)]">
-                    {project.category}
+                {project.year && (
+                  <>
+                    <span class="opacity-40">/</span>
+                    <span>{project.year}</span>
+                  </>
+                )}
+
+                <span class="opacity-40">/</span>
+
+                <span>{project.status}</span>
+              </div>
+
+              <!-- Project Number -->
+              <div class="mb-4 text-sm text-[var(--sec)] opacity-70">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <!-- Title -->
+              <h3
+                class="max-w-4xl text-2xl font-semibold tracking-tight text-[var(--white)] md:text-3xl lg:text-4xl"
+              >
+                {project.title}
+              </h3>
+
+              <!-- Category -->
+              <p class="mt-3 text-sm font-medium text-[var(--sec)] md:text-base">
+                {project.category}
+              </p>
+
+              <!-- Description -->
+              <p
+                class="mt-6 max-w-4xl text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8"
+              >
+                {project.description}
+              </p>
+
+              <!-- Details Grid -->
+              <div class="mt-10 grid gap-10 md:grid-cols-2">
+                <!-- Role -->
+                <div>
+                  <h4 class="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                    Role
+                  </h4>
+
+                  <p class="text-sm leading-7 text-[var(--white-icon)] md:text-base">
+                    {project.role}
                   </p>
 
-                  {
-                    project.type === "freelance" && (
-                      <span
-                        class="rounded-full border border-[var(--sec)]/30 bg-[var(--sec)]/10 px-3 py-1 text-xs text-[var(--sec)]"
-                      >
-                        Freelance
-                      </span>
-                    )
-                  }
-
-                  {
-                    project.type === "case-study" && (
-                      <span
-                        class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1 text-xs text-[var(--white-icon)]"
-                      >
-                        Case Study
-                      </span>
-                    )
-                  }
+                  {project.client && (
+                    <p class="mt-2 text-sm text-[var(--white-icon)]">
+                      Client: {project.client}
+                    </p>
+                  )}
                 </div>
 
-                <h3
-                  class="text-3xl md:text-4xl font-semibold"
-                >
-                  {project.title}
-                </h3>
+                <!-- Highlights -->
+                <div>
+                  <h4 class="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                    Scope & Contribution
+                  </h4>
 
-                <p
-                  class="mt-4 text-[var(--white-icon)] leading-relaxed max-w-3xl"
-                >
-                  {project.description}
-                </p>
+                  <ul class="space-y-2 text-sm leading-6 text-[var(--white-icon)] md:text-base">
+                    {project.highlights.map((highlight) => (
+                      <li class="flex items-start gap-3">
+                        <span class="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-[var(--sec)]" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <span
-                class="text-sm text-[var(--white-icon)] border border-[var(--white-icon-tr)] rounded-full px-4 py-2 whitespace-nowrap"
-              >
-                {project.status}
-              </span>
-            </div>
+              <!-- Technology Stack -->
+              <div class="mt-10">
+                <h4 class="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
+                  Technology Stack
+                </h4>
 
-            <!-- PROJECT META -->
-            {
-              (project.year || project.client) && (
-                <div
-                  class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-[var(--white-icon)]"
-                >
-                  {
-                    project.year && (
-                      <div>
-                        <span class="text-[var(--white-icon-tr)]">
-                          Year
-                        </span>
-
-                        <span class="ml-2 text-[var(--white)]">
-                          {project.year}
-                        </span>
-                      </div>
-                    )
-                  }
-
-                  {
-                    project.client && (
-                      <div>
-                        <span class="text-[var(--white-icon-tr)]">
-                          Client
-                        </span>
-
-                        <span class="ml-2 text-[var(--white)]">
-                          {project.client}
-                        </span>
-                      </div>
-                    )
-                  }
-                </div>
-              )
-            }
-
-            <!-- ROLE -->
-            <div
-              class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
-            >
-              <p
-                class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-2"
-              >
-                Role
-              </p>
-
-              <p class="text-[var(--white)]">
-                {project.role}
-              </p>
-            </div>
-
-            <!-- STACK -->
-            <div class="mt-6">
-              <p
-                class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-3"
-              >
-                Technology Stack
-              </p>
-
-              <div class="flex flex-wrap gap-2">
-                {
-                  project.stack.map((item) => (
+                <div class="flex flex-wrap gap-2">
+                  {project.stack.map((technology) => (
                     <span
-                      class="px-3 py-1 rounded-full text-sm border border-[var(--white-icon-tr)] text-[var(--white-icon)]"
+                      class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1.5 text-xs text-[var(--white-icon)]"
                     >
-                      {item}
+                      {technology}
                     </span>
-                  ))
-                }
+                  ))}
+                </div>
               </div>
-            </div>
 
-            <!-- HIGHLIGHTS -->
-            <div
-              class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
-            >
-              <p
-                class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-4"
-              >
-                Scope & Contribution
-              </p>
-
-              <ul class="space-y-3">
-                {
-                  project.highlights.map((highlight) => (
-                    <li
-                      class="flex gap-3 text-[var(--white)]"
-                    >
-                      <span class="text-[var(--sec)]">
-                        →
-                      </span>
-
-                      <span>
-                        {highlight}
-                      </span>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-
-            <!-- DOCUMENT -->
-            {
-              project.document && (
-                <div
-                  class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
-                >
+              <!-- Project Document -->
+              {project.document && (
+                <div class="mt-10 border-t border-[var(--white-icon-tr)] pt-8">
                   <a
                     href={project.document.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${project.document.label} — ${project.title}`}
-                    class="inline-flex items-center gap-2 rounded-full border border-[var(--sec)]/40 bg-[var(--sec)]/10 px-5 py-2.5 text-sm font-medium text-[var(--sec)] transition-all duration-300 hover:border-[var(--sec)] hover:bg-[var(--sec)]/20"
+                    class="inline-flex items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)]"
+                    aria-label={`${project.document.label}: ${project.title}`}
                   >
-                    <span>
-                      {project.document.label}
-                    </span>
+                    <span>{project.document.label}</span>
 
-                    <span aria-hidden="true">
-                      ↗
-                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M14 3H21V10H19V6.414L10.707 14.707L9.293 13.293L17.586 5H14V3ZM5 5H11V7H5C4.448 7 4 7.448 4 8V19C4 19.552 4.448 20 5 20H16C16.552 20 17 19.552 17 19V13H19V19C19 20.657 17.657 22 16 22H5C3.343 22 2 20.657 2 19V8C2 6.343 3.343 5 5 5Z" />
+                    </svg>
                   </a>
                 </div>
-              )
-            }
-
+              )}
+            </div>
           </article>
         ))
       }
     </div>
   </div>
 </section>
-
-<style is:global>
-  .shiny-sec {
-    background: linear-gradient(
-      135deg,
-      #a476ff 25%,
-      #eee5ff 50%,
-      #a476ff 75%
-    );
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 3s linear infinite;
-  }
-
-  @keyframes shine {
-    0% {
-      background-position: 100% 50%;
-    }
-
-    30%,
-    70% {
-      background-position: 0% 50%;
-    }
-  }
-</style>
