@@ -149,5 +149,25 @@ export const projects: Project[] = [
     type: "case-study",
 
     year: "2026",
+
+    caseStudy: {
+      overview:
+        "A structured business and system analysis initiative designed to translate operational challenges into clearer processes, information flows, and technology requirements.",
+
+      problem:
+        "Operational activities, financial information, and business processes required clearer structure so that decision-making and system development could be based on consistent information.",
+
+      context:
+        "The initiative sits at the intersection of business operations, financial analysis, data flow, and digital system planning.",
+
+      approach:
+        "Analyzed business processes, mapped information flows, examined financial conditions, and translated findings into structured system requirements and improvement opportunities.",
+
+      solution:
+        "Developed a structured analysis framework covering business processes, data flows, system requirements, operational improvements, and decision-support needs.",
+
+      outcome:
+        "Created a clearer foundation for digital transformation by connecting business requirements with structured data, system design, and operational improvement strategies.",
+    },
   },
 ];
