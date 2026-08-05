@@ -173,7 +173,7 @@ const projectTypeLabel = {
                   class="mt-10 border-t border-[var(--white-icon-tr)] pt-8 md:mt-12 md:pt-10"
                   aria-labelledby={`case-study-${index + 1}-title`}
                 >
-                  <div class="mb-8 max-w-3xl md:mb-10">
+                  <header class="mb-8 max-w-3xl md:mb-10">
                     <p class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--sec)]">
                       Case Study
                     </p>
@@ -184,11 +184,22 @@ const projectTypeLabel = {
                     >
                       From Problem to Structured Solution
                     </h4>
-                  </div>
+
+                    <p class="mt-4 max-w-2xl text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8">
+                      A structured view of the problem, reasoning, solution, and resulting direction.
+                    </p>
+                  </header>
 
                   <div class="grid gap-x-10 gap-y-8 md:grid-cols-2 md:gap-y-10">
                     <!-- Overview -->
-                    <div>
+                    <div class="relative border-l border-[var(--white-icon-tr)] pl-5 md:pl-6">
+                      <span
+                        class="mb-3 block text-[10px] font-medium tracking-[0.2em] text-[var(--sec)]"
+                        aria-hidden="true"
+                      >
+                        01
+                      </span>
+
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
                         Overview
                       </h5>
@@ -199,7 +210,14 @@ const projectTypeLabel = {
                     </div>
 
                     <!-- Context -->
-                    <div>
+                    <div class="relative border-l border-[var(--white-icon-tr)] pl-5 md:pl-6">
+                      <span
+                        class="mb-3 block text-[10px] font-medium tracking-[0.2em] text-[var(--sec)]"
+                        aria-hidden="true"
+                      >
+                        02
+                      </span>
+
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
                         Context
                       </h5>
@@ -210,7 +228,14 @@ const projectTypeLabel = {
                     </div>
 
                     <!-- Problem -->
-                    <div>
+                    <div class="relative border-l border-[var(--white-icon-tr)] pl-5 md:pl-6">
+                      <span
+                        class="mb-3 block text-[10px] font-medium tracking-[0.2em] text-[var(--sec)]"
+                        aria-hidden="true"
+                      >
+                        03
+                      </span>
+
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
                         Problem
                       </h5>
@@ -221,7 +246,14 @@ const projectTypeLabel = {
                     </div>
 
                     <!-- Approach -->
-                    <div>
+                    <div class="relative border-l border-[var(--white-icon-tr)] pl-5 md:pl-6">
+                      <span
+                        class="mb-3 block text-[10px] font-medium tracking-[0.2em] text-[var(--sec)]"
+                        aria-hidden="true"
+                      >
+                        04
+                      </span>
+
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
                         Approach
                       </h5>
@@ -232,7 +264,14 @@ const projectTypeLabel = {
                     </div>
 
                     <!-- Solution -->
-                    <div>
+                    <div class="relative border-l border-[var(--white-icon-tr)] pl-5 md:pl-6">
+                      <span
+                        class="mb-3 block text-[10px] font-medium tracking-[0.2em] text-[var(--sec)]"
+                        aria-hidden="true"
+                      >
+                        05
+                      </span>
+
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
                         Solution
                       </h5>
@@ -243,7 +282,14 @@ const projectTypeLabel = {
                     </div>
 
                     <!-- Outcome -->
-                    <div>
+                    <div class="relative border-l border-[var(--sec)]/50 pl-5 md:pl-6">
+                      <span
+                        class="mb-3 block text-[10px] font-medium tracking-[0.2em] text-[var(--sec)]"
+                        aria-hidden="true"
+                      >
+                        06
+                      </span>
+
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
                         Outcome
                       </h5>
