@@ -31,59 +31,62 @@ import { projects } from "../data/projects";
     </div>
 
     <!-- Projects -->
-    <div class="space-y-8">
+    <div class="space-y-10">
       {
         projects.map((project, index) => (
-          <article class="group relative overflow-hidden rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] transition-all duration-300 hover:border-[var(--sec)]/40">
+          <article class="group relative overflow-hidden rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] transition-all duration-500 hover:border-[var(--sec)]/40">
             <div class="p-6 md:p-8 lg:p-10">
-              <!-- Project Meta -->
-              <div class="mb-6 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.15em] text-[var(--white-icon)]">
-                <span
-                  class={`rounded-full border px-3 py-1.5 ${
-                    project.type === "freelance"
-                      ? "border-[var(--sec)]/40 text-[var(--sec)]"
-                      : project.type === "case-study"
-                        ? "border-[var(--white)]/30 text-[var(--white)]"
-                        : "border-[var(--white-icon-tr)] text-[var(--white-icon)]"
-                  }`}
-                >
-                  {project.type ?? "project"}
-                </span>
+              <!-- Project Header -->
+              <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+                <!-- Number -->
+                <div class="text-sm font-medium tracking-[0.2em] text-[var(--sec)]">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
 
-                {project.year && (
-                  <>
-                    <span class="opacity-40">/</span>
-                    <span>{project.year}</span>
-                  </>
-                )}
+                <!-- Meta -->
+                <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.15em] text-[var(--white-icon)] md:justify-end">
+                  <span
+                    class={`rounded-full border px-3 py-1.5 ${
+                      project.type === "freelance"
+                        ? "border-[var(--sec)]/40 text-[var(--sec)]"
+                        : project.type === "case-study"
+                          ? "border-[var(--white)]/30 text-[var(--white)]"
+                          : "border-[var(--white-icon-tr)] text-[var(--white-icon)]"
+                    }`}
+                  >
+                    {project.type ?? "project"}
+                  </span>
 
-                <span class="opacity-40">/</span>
+                  {project.year && (
+                    <>
+                      <span class="opacity-30">/</span>
+                      <span>{project.year}</span>
+                    </>
+                  )}
 
-                <span>{project.status}</span>
+                  <span class="opacity-30">/</span>
+
+                  <span>{project.status}</span>
+                </div>
               </div>
 
-              <!-- Project Number -->
-              <div class="mb-4 text-sm text-[var(--sec)] opacity-70">
-                {String(index + 1).padStart(2, "0")}
+              <!-- Project Identity -->
+              <div class="mt-8 max-w-5xl">
+                <h3 class="text-2xl font-semibold tracking-tight text-[var(--white)] md:text-3xl lg:text-4xl">
+                  {project.title}
+                </h3>
+
+                <p class="mt-3 text-sm font-medium text-[var(--sec)] md:text-base">
+                  {project.category}
+                </p>
+
+                <p class="mt-6 max-w-4xl text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8">
+                  {project.description}
+                </p>
               </div>
 
-              <!-- Title -->
-              <h3 class="max-w-4xl text-2xl font-semibold tracking-tight text-[var(--white)] md:text-3xl lg:text-4xl">
-                {project.title}
-              </h3>
-
-              <!-- Category -->
-              <p class="mt-3 text-sm font-medium text-[var(--sec)] md:text-base">
-                {project.category}
-              </p>
-
-              <!-- Description -->
-              <p class="mt-6 max-w-4xl text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8">
-                {project.description}
-              </p>
-
-              <!-- Details Grid -->
-              <div class="mt-10 grid gap-10 md:grid-cols-2">
+              <!-- Project Details -->
+              <div class="mt-12 grid gap-10 border-t border-[var(--white-icon-tr)] pt-10 md:grid-cols-2">
                 <!-- Role -->
                 <div>
                   <h4 class="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
@@ -95,7 +98,7 @@ import { projects } from "../data/projects";
                   </p>
 
                   {project.client && (
-                    <p class="mt-2 text-sm text-[var(--white-icon)]">
+                    <p class="mt-3 text-sm text-[var(--white-icon)]">
                       Client: {project.client}
                     </p>
                   )}
@@ -118,15 +121,15 @@ import { projects } from "../data/projects";
                 </div>
               </div>
 
-              <!-- Technology Stack -->
+              <!-- Technology & Methods -->
               <div class="mt-10">
                 <h4 class="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
-                  Technology Stack
+                  Technology & Methods
                 </h4>
 
                 <div class="flex flex-wrap gap-2">
                   {project.stack.map((technology) => (
-                    <span class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1.5 text-xs text-[var(--white-icon)]">
+                    <span class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1.5 text-xs text-[var(--white-icon)] transition-colors duration-300 group-hover:border-[var(--white-icon)]/30">
                       {technology}
                     </span>
                   ))}
@@ -136,7 +139,7 @@ import { projects } from "../data/projects";
               <!-- Case Study -->
               {project.caseStudy && (
                 <div class="mt-12 border-t border-[var(--white-icon-tr)] pt-10">
-                  <div class="mb-8">
+                  <div class="mb-10 max-w-3xl">
                     <p class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--sec)]">
                       Case Study
                     </p>
@@ -146,7 +149,7 @@ import { projects } from "../data/projects";
                     </h4>
                   </div>
 
-                  <div class="grid gap-x-10 gap-y-8 md:grid-cols-2">
+                  <div class="grid gap-x-10 gap-y-10 md:grid-cols-2">
                     <!-- Overview -->
                     <div>
                       <h5 class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--white)]">
@@ -218,12 +221,12 @@ import { projects } from "../data/projects";
 
               <!-- Project Document -->
               {project.document && (
-                <div class="mt-10 border-t border-[var(--white-icon-tr)] pt-8">
+                <div class="mt-12 border-t border-[var(--white-icon-tr)] pt-8">
                   <a
                     href={project.document.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="group/link inline-flex items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)]"
+                    class="inline-flex items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)]"
                     aria-label={`${project.document.label}: ${project.title}`}
                   >
                     <span>{project.document.label}</span>
@@ -232,7 +235,7 @@ import { projects } from "../data/projects";
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                      class="h-4 w-4"
                       aria-hidden="true"
                     >
                       <path d="M14 3H21V10H19V6.414L10.707 14.707L9.293 13.293L17.586 5H14V3ZM5 5H11V7H5C4.448 7 4 7.448 4 8V19C4 19.552 4.448 20 5 20H16C16.552 20 17 19.552 17 19V13H19V19C19 20.657 17.657 22 16 22H5C3.343 22 2 20.657 2 19V8C2 6.343 3.343 5 5 5Z" />
