@@ -37,29 +37,33 @@ export const projects: Project[] = [
   {
     title: "NOMAD Agency",
 
-    category: "Digital Solutions & Technology",
+    category: "Digital Agency & Technology",
 
     description:
-      "A digital technology initiative focused on building structured digital products by combining software engineering, UI/UX design, system analysis, and technology strategy.",
+      "A digital agency initiative focused on creating handcrafted digital experiences across technology, design, strategy, and digital communication.",
 
     highlights: [
-      "UI/UX design and digital experience development",
-      "Modern web application development",
-      "Digital product strategy",
-      "Technology consulting and solution architecture",
+      "Digital strategy and campaign development",
+      "Brand strategy and visual experience",
+      "UI/UX and digital product development",
+      "Web, app, CMS, e-commerce, and ERP development",
+      "Database and digital system development",
+      "Social media and digital campaign optimization",
     ],
 
     stack: [
-      "Astro",
-      "TypeScript",
-      "React",
-      "Tailwind CSS",
-      "GitHub",
+      "Digital Strategy",
+      "UI/UX",
+      "Web Development",
+      "App Development",
+      "CMS",
+      "Database",
+      "Digital Campaign",
     ],
 
     role: "Founder / Technology Strategist",
 
-    status: "Personal Technology Initiative",
+    status: "Digital Agency Initiative",
 
     type: "project",
 
@@ -78,23 +82,25 @@ export const projects: Project[] = [
     category: "Freelance / Agency Portfolio",
 
     description:
-      "A company profile and portfolio document presenting NOMAD Agency's capabilities, services, selected work, and approach to digital solutions, branding, technology, and creative production.",
+      "A company profile and portfolio presenting NOMAD Agency's capabilities, methodology, supporting instruments, business processes, and selected approaches to digital transformation and organizational improvement.",
 
     highlights: [
-      "Company profile development",
-      "Digital and technology services",
-      "Branding and creative capabilities",
-      "Portfolio and selected works",
-      "Client-facing presentation",
-      "Digital solution positioning",
+      "Company profile and capability presentation",
+      "Business process and workflow mapping",
+      "Financial and operational analysis",
+      "System and supporting instrument planning",
+      "Proposal and deliverable framework development",
+      "Client-facing strategic documentation",
     ],
 
     stack: [
+      "Business Analysis",
       "Digital Strategy",
-      "Branding",
-      "UI/UX",
-      "Web Development",
-      "Creative Production",
+      "System Design",
+      "Process Mapping",
+      "Financial Analysis",
+      "Documentation",
+      "Strategic Planning",
     ],
 
     role: "Founder / Digital Technology Strategist",
