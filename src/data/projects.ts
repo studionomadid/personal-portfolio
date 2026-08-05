@@ -73,6 +73,46 @@ export const projects: Project[] = [
   },
 
   {
+    title: "NOMAD Agency — Company Profile & Portfolio",
+
+    category: "Freelance / Agency Portfolio",
+
+    description:
+      "A company profile and portfolio document presenting NOMAD Agency's capabilities, services, selected work, and approach to digital solutions, branding, technology, and creative production.",
+
+    highlights: [
+      "Company profile development",
+      "Digital and technology services",
+      "Branding and creative capabilities",
+      "Portfolio and selected works",
+      "Client-facing presentation",
+      "Digital solution positioning",
+    ],
+
+    stack: [
+      "Digital Strategy",
+      "Branding",
+      "UI/UX",
+      "Web Development",
+      "Creative Production",
+    ],
+
+    role: "Founder / Digital Technology Strategist",
+
+    status: "Freelance / Agency Portfolio",
+
+    type: "freelance",
+
+    year: "2023",
+
+    document: {
+      label: "View Company Profile",
+      path: "/portfolio/Nomad_COMPRO.pdf",
+      type: "pdf",
+    },
+  },
+
+  {
     title: "GN Central System — Business Transformation",
 
     category: "Business Analysis & System Design",
@@ -103,25 +143,5 @@ export const projects: Project[] = [
     type: "case-study",
 
     year: "2026",
-
-    caseStudy: {
-      overview:
-        "A business and system transformation case study focused on analyzing an existing operational environment and translating business needs into a structured digital system concept.",
-
-      problem:
-        "The existing operational process involved fragmented information, manual workflows, and limited visibility into business and financial performance, making it difficult to monitor operations and support consistent decision-making.",
-
-      context:
-        "The project was approached from the perspective of business analysis and system design, with attention to operational workflows, financial conditions, information flow, data requirements, and the relationship between business activities and supporting technology.",
-
-      approach:
-        "The analysis began by understanding the existing business processes and identifying operational gaps. Business requirements were then structured into process flows, information requirements, financial considerations, and system components that could support future digital transformation.",
-
-      solution:
-        "The proposed solution translated the business requirements into a structured system concept supported by business process analysis, Data Flow Diagrams (DFD), system architecture planning, data analysis, and operational improvement strategies.",
-
-      outcome:
-        "The resulting analysis established a clearer model of the business operation and provided a structured foundation for future system development, reporting, process improvement, and technology-driven decision support.",
-    },
   },
 ];
