@@ -304,27 +304,49 @@ const projectTypeLabel = {
 
               <!-- Project Document -->
               {project.document && (
-                <div class="mt-10 border-t border-[var(--white-icon-tr)] pt-8 md:mt-12">
-                  <a
-                    href={project.document.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)] focus:outline-none focus:ring-2 focus:ring-[var(--sec)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
-                    aria-label={`${project.document.label}: ${project.title}`}
-                  >
-                    <span>{project.document.label}</span>
+                <section
+                  class="mt-10 border-t border-[var(--white-icon-tr)] pt-8 md:mt-12 md:pt-10"
+                  aria-labelledby={`document-${index + 1}-title`}
+                >
+                  <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+                    <div class="max-w-xl">
+                      <p class="mb-3 text-xs font-medium uppercase tracking-[0.15em] text-[var(--sec)]">
+                        Documentation
+                      </p>
 
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-                      aria-hidden="true"
+                      <h4
+                        id={`document-${index + 1}-title`}
+                        class="text-lg font-semibold tracking-tight text-[var(--white)] md:text-xl"
+                      >
+                        Supporting portfolio material
+                      </h4>
+
+                      <p class="mt-3 text-sm leading-7 text-[var(--white-icon)] md:text-base md:leading-8">
+                        Supporting documentation and portfolio material related to this project.
+                      </p>
+                    </div>
+
+                    <a
+                      href={project.document.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full border border-[var(--white)] px-5 py-3 text-sm font-medium text-[var(--white)] transition-all duration-300 hover:bg-[var(--white)] hover:text-[var(--bg)] focus:outline-none focus:ring-2 focus:ring-[var(--sec)] focus:ring-offset-2 focus:ring-offset-[var(--bg)]"
+                      aria-label={`${project.document.label}: ${project.title}`}
                     >
-                      <path d="M14 3H21V10H19V6.414L10.707 14.707L9.293 13.293L17.586 5H14V3ZM5 5H11V7H5C4.448 7 4 7.448 4 8V19C4 19.552 4.448 20 5 20H16C16.552 20 17 19.552 17 19V13H19V19C19 20.657 17.657 22 16 22H5C3.343 22 2 20.657 2 19V8C2 6.343 3.343 5 5 5Z" />
-                    </svg>
-                  </a>
-                </div>
+                      <span>{project.document.label}</span>
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M14 3H21V10H19V6.414L10.707 14.707L9.293 13.293L17.586 5H14V3ZM5 5H11V7H5C4.448 7 4 7.448 4 8V19C4 19.552 4.448 20 5 20H16C16.552 20 17 19.552 17 19V13H19V19C19 20.657 17.657 22 16 22H5C3.343 22 2 20.657 2 19V8C2 6.343 3.343 5 5 5Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </section>
               )}
             </div>
           </article>
