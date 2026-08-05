@@ -10,7 +10,6 @@ import { projects } from "../data/projects";
 
     <!-- HEADER -->
     <div class="mb-12">
-
       <p class="text-lg text-[var(--sec)] shiny-sec mb-2">
         Selected Work
       </p>
@@ -25,30 +24,46 @@ import { projects } from "../data/projects";
         A collection of technology, business analysis, and digital
         transformation projects focused on building structured solutions.
       </p>
-
     </div>
-
 
     <!-- PROJECT GRID -->
     <div class="grid grid-cols-1 gap-8">
-
       {
         projects.map((project) => (
-
           <article
             class="rounded-3xl border border-[var(--white-icon-tr)] bg-[#1414149c] p-8 transition-all duration-300 hover:border-[var(--sec)]/40"
           >
 
-
             <!-- TITLE -->
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-
+            <div
+              class="flex flex-col md:flex-row md:items-start md:justify-between gap-6"
+            >
               <div>
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                  <p class="text-sm text-[var(--sec)]">
+                    {project.category}
+                  </p>
 
-                <p class="text-sm text-[var(--sec)] mb-3">
-                  {project.category}
-                </p>
+                  {
+                    project.type === "freelance" && (
+                      <span
+                        class="rounded-full border border-[var(--sec)]/30 bg-[var(--sec)]/10 px-3 py-1 text-xs text-[var(--sec)]"
+                      >
+                        Freelance
+                      </span>
+                    )
+                  }
 
+                  {
+                    project.type === "case-study" && (
+                      <span
+                        class="rounded-full border border-[var(--white-icon-tr)] px-3 py-1 text-xs text-[var(--white-icon)]"
+                      >
+                        Case Study
+                      </span>
+                    )
+                  }
+                </div>
 
                 <h3
                   class="text-3xl md:text-4xl font-semibold"
@@ -56,32 +71,61 @@ import { projects } from "../data/projects";
                   {project.title}
                 </h3>
 
-
                 <p
                   class="mt-4 text-[var(--white-icon)] leading-relaxed max-w-3xl"
                 >
                   {project.description}
                 </p>
-
               </div>
-
 
               <span
                 class="text-sm text-[var(--white-icon)] border border-[var(--white-icon-tr)] rounded-full px-4 py-2 whitespace-nowrap"
               >
                 {project.status}
               </span>
-
-
             </div>
 
+            <!-- PROJECT META -->
+            {
+              (project.year || project.client) && (
+                <div
+                  class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm text-[var(--white-icon)]"
+                >
+                  {
+                    project.year && (
+                      <div>
+                        <span class="text-[var(--white-icon-tr)]">
+                          Year
+                        </span>
 
+                        <span class="ml-2 text-[var(--white)]">
+                          {project.year}
+                        </span>
+                      </div>
+                    )
+                  }
+
+                  {
+                    project.client && (
+                      <div>
+                        <span class="text-[var(--white-icon-tr)]">
+                          Client
+                        </span>
+
+                        <span class="ml-2 text-[var(--white)]">
+                          {project.client}
+                        </span>
+                      </div>
+                    )
+                  }
+                </div>
+              )
+            }
 
             <!-- ROLE -->
             <div
               class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
             >
-
               <p
                 class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-2"
               >
@@ -91,93 +135,113 @@ import { projects } from "../data/projects";
               <p class="text-[var(--white)]">
                 {project.role}
               </p>
-
             </div>
-
-
-
 
             <!-- STACK -->
             <div class="mt-6">
-
               <p
                 class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-3"
               >
                 Technology Stack
               </p>
 
-
               <div class="flex flex-wrap gap-2">
-
                 {
                   project.stack.map((item) => (
-
                     <span
                       class="px-3 py-1 rounded-full text-sm border border-[var(--white-icon-tr)] text-[var(--white-icon)]"
                     >
                       {item}
                     </span>
-
                   ))
                 }
-
               </div>
-
             </div>
-
-
-
 
             <!-- HIGHLIGHTS -->
             <div
               class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
             >
-
               <p
                 class="text-xs uppercase tracking-widest text-[var(--white-icon)] mb-4"
               >
                 Scope & Contribution
               </p>
 
-
               <ul class="space-y-3">
-
                 {
                   project.highlights.map((highlight) => (
-
                     <li
                       class="flex gap-3 text-[var(--white)]"
                     >
-
-                      <span
-                        class="text-[var(--sec)]"
-                      >
+                      <span class="text-[var(--sec)]">
                         →
                       </span>
 
                       <span>
                         {highlight}
                       </span>
-
                     </li>
-
                   ))
                 }
-
               </ul>
-
-
             </div>
 
+            <!-- DOCUMENT -->
+            {
+              project.document && (
+                <div
+                  class="mt-8 pt-6 border-t border-[var(--white-icon-tr)]"
+                >
+                  <a
+                    href={project.document.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.document.label} — ${project.title}`}
+                    class="inline-flex items-center gap-2 rounded-full border border-[var(--sec)]/40 bg-[var(--sec)]/10 px-5 py-2.5 text-sm font-medium text-[var(--sec)] transition-all duration-300 hover:border-[var(--sec)] hover:bg-[var(--sec)]/20"
+                  >
+                    <span>
+                      {project.document.label}
+                    </span>
+
+                    <span aria-hidden="true">
+                      ↗
+                    </span>
+                  </a>
+                </div>
+              )
+            }
 
           </article>
-
         ))
       }
-
-
     </div>
-
-
   </div>
 </section>
+
+<style is:global>
+  .shiny-sec {
+    background: linear-gradient(
+      135deg,
+      #a476ff 25%,
+      #eee5ff 50%,
+      #a476ff 75%
+    );
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 100% 50%;
+    }
+
+    30%,
+    70% {
+      background-position: 0% 50%;
+    }
+  }
+</style>

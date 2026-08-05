@@ -1,3 +1,14 @@
+export type ProjectType =
+  | "project"
+  | "freelance"
+  | "case-study";
+
+export interface ProjectDocument {
+  label: string;
+  path: string;
+  type: "pdf";
+}
+
 export interface Project {
   title: string;
   category: string;
@@ -6,6 +17,10 @@ export interface Project {
   stack: string[];
   role: string;
   status: string;
+  type?: ProjectType;
+  year?: string;
+  client?: string;
+  document?: ProjectDocument;
 }
 
 export const projects: Project[] = [
@@ -32,20 +47,25 @@ export const projects: Project[] = [
       "GitHub",
     ],
 
-    role:
-      "Founder / Technology Strategist",
+    role: "Founder / Technology Strategist",
 
-    status:
-      "Personal Technology Initiative",
+    status: "Personal Technology Initiative",
+
+    type: "project",
+
+    year: "2026",
+
+    document: {
+      label: "View Portfolio",
+      path: "/portfolio/NOMAD.pdf",
+      type: "pdf",
+    },
   },
 
-
   {
-    title:
-      "GN Central System — Business Transformation",
+    title: "GN Central System — Business Transformation",
 
-    category:
-      "Business Analysis & System Design",
+    category: "Business Analysis & System Design",
 
     description:
       "A business and system analysis case study focused on understanding operational workflows, financial conditions, information flow, and designing structured digital improvements.",
@@ -66,10 +86,12 @@ export const projects: Project[] = [
       "Documentation",
     ],
 
-    role:
-      "Business Analyst / System Designer",
+    role: "Business Analyst / System Designer",
 
-    status:
-      "System Analysis Case Study",
+    status: "System Analysis Case Study",
+
+    type: "case-study",
+
+    year: "2026",
   },
 ];
